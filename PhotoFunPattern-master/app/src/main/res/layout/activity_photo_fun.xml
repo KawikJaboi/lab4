@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="60"
+        android:layout_weight="45"
         android:orientation="horizontal">
 
         <ImageView
@@ -38,8 +38,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
-        android:orientation="horizontal" >
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/brightnessDeltaText"
             android:layout_width="0dp"
@@ -48,15 +49,16 @@
             android:gravity="center"
             android:text="Original"
             android:textSize="20sp" />
+
         <TextView
+            android:id="@+id/brightnessBetaText"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Modified"
-            android:textSize="15sp"
             android:gravity="center"
-            android:id="@+id/brightnessBetaText"/>
-     </LinearLayout>
+            android:text="Modified"
+            android:textSize="15sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -81,13 +83,51 @@
             android:layout_weight="0.2" />
 
         <Button
-            android:text="Brightness Filter"
+            android:id="@+id/brightnessFilterButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/brightnessFilterButton"
+            android:layout_weight="4"
+            android:text="Brightness Filter"
+            android:textSize="18sp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+        <Button
+            android:text="Red Filter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/redFilterButton"
             android:layout_weight="3"
             android:textSize="18sp" />
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:max="256" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <TextView
+            android:id="@+id/seekBarText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="15sp" />
     </LinearLayout>
 </LinearLayout>

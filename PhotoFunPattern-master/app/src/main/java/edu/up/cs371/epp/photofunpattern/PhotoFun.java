@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
         import android.widget.ImageView;
         import android.widget.Button;
         import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.SeekBar;
+import android.util.Log;
+import android.widget.TextView;
 
 /**
  *  class PhotoFun controls this photo manipulation app.
@@ -40,39 +44,28 @@ public class PhotoFun extends AppCompatActivity {
                 (BitmapDrawable) originalImageView.getDrawable();
         myOriginalBmp = originalDrawableBmp.getBitmap();
 
+        //myOriginalView = (ImageView) findViewById(R.id.originalImage);
+
         myNewImageView = (ImageView) findViewById(R.id.newImage);
+        Button WestEdgeButton =
+                (Button) findViewById(R.id.WestEdgeButton);
+        WestEdgeButton.setOnClickListener
+                (new WestEdgeButtonListener());
 
-        Button grayFilterButton =
-                (Button) findViewById(R.id.grayFilterButton);
-        grayFilterButton.setOnClickListener(new grayFilterButtonListener());
-        Button brightnessFilterButton =
-                (Button) findViewById(R.id.brightnessFilterButton);
-        brightnessFilterButton.setOnClickListener
-                (new brightnessFilterButtonListener());
+
     }
 
-    /*
-    * class grayFilterButtonListener this inner class defines the action for
-    * the gray filter button.
-    */
-    private class grayFilterButtonListener implements View.OnClickListener {
-        public void onClick(View button) {
-            GrayFilter filter = new GrayFilter();
-            myNewImageView.setImageBitmap(filter.apply(myOriginalBmp));
-        }
-    }
 
     /*
-    * class grayFilterButtonListener this inner class defines the action for the
-    * brightness filter
-    * button.
-    */
-    private class brightnessFilterButtonListener
+     * class WestEdgeFilter this inner class defines the action for the
+     * West Edge filter
+     * button.
+     */
+    private class WestEdgeButtonListener
             implements View.OnClickListener {
         public void onClick(View button) {
-            BrightnessFilter filter = new BrightnessFilter();
+            WestEdgeFilter filter = new WestEdgeFilter();
             myNewImageView.setImageBitmap(filter.apply(myOriginalBmp));
         }
     }
 }
-
